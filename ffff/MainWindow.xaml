@@ -1,0 +1,55 @@
+﻿<Window x:Class="ExamScoreCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExamScoreCalculator"
+        mc:Ignorable="d"
+        Title="Калькулятор экзаменационных баллов" Height="350" Width="400">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Введите баллы за задания:" FontWeight="Bold" Margin="0,0,0,10"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,5">
+            <TextBlock Text="Задание 1 (макс. 10):" Width="150"/>
+            <TextBox x:Name="task1Box" Width="50" Text="0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,5">
+            <TextBlock Text="Задание 2 (макс. 50):" Width="150"/>
+            <TextBox x:Name="task2Box" Width="50" Text="0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,0,0,5">
+            <TextBlock Text="Задание 3 (макс. 30):" Width="150"/>
+            <TextBox x:Name="task3Box" Width="50" Text="0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Задание 4 (макс. 10):" Width="150"/>
+            <TextBox x:Name="task4Box" Width="50" Text="0"/>
+        </StackPanel>
+
+        <Button Grid.Row="5" Content="Рассчитать" Click="CalculateButton_Click" Margin="0,0,0,10"/>
+
+        <Border Grid.Row="6" BorderBrush="Gray" BorderThickness="1" Padding="10">
+            <StackPanel>
+                <TextBlock x:Name="resultText" Text="Результат будет отображён здесь." TextWrapping="Wrap"/>
+                <TextBlock x:Name="gradeText" FontWeight="Bold" Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <TextBlock Grid.Row="7" Text="Шкала оценивания: 70-100 - 5, 40-69 - 4, 20-39 - 3, 0-19 - 2" 
+                   FontStyle="Italic" TextAlignment="Center"/>
+    </Grid>
+</Window>
